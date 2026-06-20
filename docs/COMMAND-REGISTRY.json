@@ -1,7 +1,16 @@
 {
   "schemaVersion": 1,
-  "totalCommands": 92,
+  "totalCommands": 93,
   "commands": [
+    {
+      "command": "anr",
+      "description": "Analyze an Android ANR (Application Not Responding) — read the trace, locate the main-thread blocking point, classify the root cause, and recommend a minimal off-main-thread fix. Invokes the android-anr-analyzer agent.",
+      "type": "review",
+      "primaryAgents": [],
+      "allAgents": [],
+      "skills": [],
+      "path": "commands/anr.md"
+    },
     {
       "command": "aside",
       "description": "Answer a quick side question without interrupting or losing context from the current task. Resume work automatically after answering.",
@@ -1011,7 +1020,7 @@
       "orchestration": 11,
       "planning": 2,
       "refactoring": 1,
-      "review": 13,
+      "review": 14,
       "testing": 53
     },
     "topAgents": [
