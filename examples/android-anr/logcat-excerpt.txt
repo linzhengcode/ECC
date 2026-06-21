@@ -1,0 +1,7 @@
+06-18 14:22:07.too 12345 12377 E ActivityManager: ANR in com.example.shop (com.example.shop/.ui.CartActivity)
+06-18 14:22:07.483 12345 12377 E ActivityManager: PID: 12345
+06-18 14:22:07.483 12345 12377 E ActivityManager: Reason: Input dispatching timed out (com.example.shop/.ui.CartActivity, 5009.1ms elapsed since last dispatch)
+06-18 14:22:07.483 12345 12377 E ActivityManager: Load: 6.2 / 5.8 / 5.1
+06-18 14:22:03.110 12345 12345 I Choreographer: Skipped 312 frames! The application may be doing too much work on its main thread.
+06-18 14:22:06.842 12345 12345 W System  : A resource failed to call close.
+06-18 14:22:06.991 12345 12345 I SQLiteStatement: Slow operation: 4123ms on com.example.shop/cart.db (INSERT OR REPLACE INTO cart_items ...)

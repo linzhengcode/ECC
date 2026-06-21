@@ -1,0 +1,100 @@
+----- pid 12345 at 2026-06-18 14:22:07.482+0000 -----
+Cmd line: com.example.shop
+Build fingerprint: 'google/sdk_gphone64_arm64/emu64a:14/UE1A.230829.036/11228894:userdebug/dev-keys'
+ABI: 'arm64'
+Build type: optimized
+Zygote loaded classes=9213 post zygote classes=512
+Dumping registered class loaders
+#0 dalvik.system.PathClassLoader: [], parent #1
+#1 java.lang.BootClassLoader: (no library path)
+Done dumping registered class loaders
+Intern table: 41201 strong; 312 weak
+JNI: CheckJNI is off; globals=512 (plus 28 weak)
+Libraries: libandroid.so libjavacore.so libopenjdkjvti.so (3)
+Heap: 38% free, 24MB/40MB; 412339 objects
+Dumping cumulative Gc timings
+Total number of allocations 412339
+Total bytes allocated 24MB
+Total bytes freed 96MB
+Free memory 16MB
+Free memory until GC 16MB
+Free memory until OOME 472MB
+Total memory 40MB
+Max memory 512MB
+suspend all histogram:  Sum: 2.481ms 99% C.I. 1us-980us Avg: 165.4us Max: 980us
+DALVIK THREADS (37):
+"main" prio=5 tid=1 Native
+  | group="main" sCount=1 dsCount=0 flags=1 obj=0x726f8c80 self=0xb400007a3c1e8800
+  | sysTid=12345 nice=-10 cgrp=top-app sched=0/0 handle=0x7e9c2f54f8
+  | state=S schedstat=( 284910342 12830771 412 ) utm=18 stm=10 core=3 HZ=100
+  | stack=0x7ff3a1c000-0x7ff3a1e000 stackSize=8188KB
+  | held mutexes=
+  native: #00 pc 00000000000d2f8c  /apex/com.android.runtime/lib64/bionic/libc.so (fsync+8)
+  native: #01 pc 0000000000019a44  /system/lib64/libsqlite.so (???)
+  native: #02 pc 0000000000061b30  /system/lib64/libandroid_runtime.so (???)
+  at android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount(Native method)
+  at android.database.sqlite.SQLiteConnection.executeForChangedRowCount(SQLiteConnection.java:884)
+  at android.database.sqlite.SQLiteSession.executeForChangedRowCount(SQLiteSession.java:760)
+  at android.database.sqlite.SQLiteStatement.executeUpdateDelete(SQLiteStatement.java:73)
+  at androidx.sqlite.db.framework.FrameworkSQLiteStatement.executeUpdateDelete(FrameworkSQLiteStatement.java:88)
+  at androidx.room.EntityInsertionAdapter.insert(EntityInsertionAdapter.java:114)
+  at com.example.shop.data.CartDao_Impl.upsert(CartDao_Impl.java:142)
+  at com.example.shop.data.CartStore.persist(CartStore.kt:88)
+  at com.example.shop.data.CartStore.addItem(CartStore.kt:54)
+  at com.example.shop.ui.CartViewModel.onAddToCart(CartViewModel.kt:71)
+  at com.example.shop.ui.CartActivity.onCreate(CartActivity.kt:96)
+  at android.app.Activity.performCreate(Activity.java:8595)
+  at android.app.Activity.performCreate(Activity.java:8573)
+  at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1456)
+  at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3766)
+  at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3955)
+  at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:101)
+  at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:135)
+  at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
+  at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2307)
+  at android.os.Handler.dispatchMessage(Handler.java:106)
+  at android.os.Looper.loopOnce(Looper.java:201)
+  at android.os.Looper.loop(Looper.java:288)
+  at android.app.ActivityThread.main(ActivityThread.java:7898)
+  at java.lang.reflect.Method.invoke(Native method)
+  at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+  at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
+
+"Jit thread pool worker thread 0" prio=5 tid=2 Native
+  | group="system" sCount=1 dsCount=0 flags=1 obj=0x12c00030 self=0xb400007a3c0c1000
+  | sysTid=12348 nice=9 cgrp=top-app sched=0/0 handle=0x7e8f1234a0
+  | state=S schedstat=( 9123445 882211 73 ) utm=0 stm=0 core=1 HZ=100
+  | stack=0x7e8f01e000-0x7e8f020000 stackSize=1020KB
+  | held mutexes=
+  native: #00 pc 00000000000a1b4c  /apex/com.android.runtime/lib64/bionic/libc.so (syscall+28)
+  (no managed stack frames)
+
+"OkHttp Dispatcher" prio=5 tid=18 Runnable
+  | group="main" sCount=0 dsCount=0 flags=0 obj=0x13d80a40 self=0xb400007a3a991400
+  | sysTid=12390 nice=0 cgrp=top-app sched=0/0 handle=0x7e74aa12c0
+  | state=R schedstat=( 41882773 2218830 96 ) utm=3 stm=1 core=2 HZ=100
+  | stack=0x7e74810000-0x7e74812000 stackSize=1039KB
+  | held mutexes= "mutator lock"(shared held)
+  at okio.RealBufferedSource.read(RealBufferedSource.kt:189)
+  at okhttp3.internal.http1.Http1ExchangeCodec.readResponseHeaders(Http1ExchangeCodec.kt:178)
+  at okhttp3.internal.connection.Exchange.readResponseHeaders(Exchange.kt:110)
+  at com.example.shop.data.PricingApi.fetchPrice(PricingApi.kt:42)
+  at com.example.shop.data.CartStore$persist$1.invokeSuspend(CartStore.kt:91)
+  at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+  at java.lang.Thread.run(Thread.java:1012)
+
+"FinalizerDaemon" daemon prio=5 tid=9 Waiting
+  | group="system" sCount=1 dsCount=0 flags=1 obj=0x13c80b90 self=0xb400007a3a0a4c00
+  | sysTid=12356 nice=4 cgrp=top-app sched=0/0 handle=0x7e7a1b22c0
+  | state=S schedstat=( 1882211 220011 14 ) utm=0 stm=0 core=0 HZ=100
+  | stack=0x7e7a018000-0x7e7a01a000 stackSize=1039KB
+  | held mutexes=
+  at java.lang.Object.wait(Native method)
+  - waiting on <0x0a1b2c3d> (a java.lang.ref.ReferenceQueue)
+  at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:217)
+  at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:233)
+  at java.lang.Daemons$FinalizerDaemon.runInternal(Daemons.java:313)
+  at java.lang.Daemons$Daemon.run(Daemons.java:140)
+  at java.lang.Thread.run(Thread.java:1012)
+
+----- end 12345 -----

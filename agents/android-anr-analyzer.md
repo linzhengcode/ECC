@@ -129,4 +129,11 @@ Confidence: high
 
 Final summary: `ANR Type: <type> | Root Cause: <category> | Blocking: <file:line or "system"> | Confidence: <low/med/high>`
 
+## Worked Example
+
+`examples/android-anr/` contains a real trace (`traces.txt`), its logcat
+(`logcat-excerpt.txt`), and the expected analysis (`README.md`) for a
+main-thread blocking-I/O ANR. Use it as a reference for the workflow and the
+output format.
+
 For Android concurrency patterns and the recommended Dispatcher usage behind these fixes, see `skill: android-anr-analysis` and `skill: kotlin-coroutines-flows`.

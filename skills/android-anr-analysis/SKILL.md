@@ -130,8 +130,20 @@ StrictMode.setThreadPolicy(
 )
 ```
 
+## Worked Example (few-shot)
+
+A complete, anonymized capture lives in `examples/android-anr/`:
+
+- `traces.txt` — real ART thread dump (main thread blocked in a Room/SQLite write)
+- `logcat-excerpt.txt` — the matching `ANR in ...` reason and `Slow operation` warning
+- `README.md` — the step-by-step analysis and the exact expected agent output
+
+Use it as a reference for the workflow: a main-thread blocking-I/O ANR whose fix
+is to make the write `suspend` and wrap it in `withContext(Dispatchers.IO)`.
+
 ## References
 
+- Worked example: `examples/android-anr/` (trace + logcat + expected output)
 - Android docs: ANRs, StrictMode, App startup, WorkManager
 - Tools: Perfetto / systrace, Android Studio Profiler, `dumpsys gfxinfo`
 - Related skills: `kotlin-coroutines-flows`, `android-clean-architecture`
